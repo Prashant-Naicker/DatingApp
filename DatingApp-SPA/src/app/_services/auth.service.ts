@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class AuthService {
   baseURL = 'http://localhost:5000/api/auth/';
 
-constructor(private http:HttpClient) { }
+constructor(private http: HttpClient) { }
 
 login(model: any) {
   return this.http.post(this.baseURL + 'login', model)
@@ -21,6 +21,10 @@ login(model: any) {
         }
       })
     );
+}
+
+register(model: any) {
+  return this.http.post(this.baseURL + 'register', model);
 }
 
 }
