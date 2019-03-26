@@ -29,6 +29,8 @@ export class ErrorInterceptor implements HttpInterceptor {
                             }
                         }
                     }
+                    const re = /[,]/g;
+                    modalStateErrors = modalStateErrors.replace(re, ' ');
                     return throwError(modalStateErrors || serverError || 'Server Error');
                 }
             })
