@@ -1,21 +1,21 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
   <div class="container">
-      <a class="navbar-brand" href="#">Profile App</a>
+      <a class="navbar-brand font-size-20 text-uppercase" [routerLink]="['/home']">Profile App</a>
 
       <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Find Profiles</a>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/members']">Find Profiles</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Friends</a>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/lists']">Friends</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link " href="#">Messages</a>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link " [routerLink]="['/messages']">Messages</a>
         </li>
       </ul>
   
       <div *ngIf="loggedIn()" class="dropdown mb-1" dropdown>
-        <button class="dropdown-toggle text-dark bg-primary border-0" dropdownToggle>
+        <button class="dropdown-toggle text-light bg-primary border-0" dropdownToggle>
           Welcome {{authService.decodedToken?.unique_name | titlecase}}
         </button>
         <div class="dropdown-menu mt-3" *dropdownMenu>
@@ -28,7 +28,7 @@
       <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="login()">
         <input class="form-control mr-sm-2" type="text" name="username" placeholder="Username" required [(ngModel)]="model.username">
         <input class="form-control mr-sm-2" type="password" name="password" placeholder="Password" required [(ngModel)]="model.password">
-        <button [disabled]="!loginForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
+        <button [disabled]="!loginForm.valid" class="btn text-uppercase font-size-20 text-white my-2 my-sm-0 bg-active" type="submit">Login</button>
       </form>
   </div>
 </nav>
