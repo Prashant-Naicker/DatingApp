@@ -17,8 +17,8 @@ namespace DatingApp.API.Models
         public string Interests { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
-        public ICollection<PhotosForDetailedDto> Photos { get; set; }
-        public DateTime DatOfBirth { get; set; }
+        public IEnumerable<Photo> Photos { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public DateTime Created { get; set; }
         public DateTime LastActive { get; set; }
     }

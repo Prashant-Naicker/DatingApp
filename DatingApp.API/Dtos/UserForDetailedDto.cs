@@ -19,7 +19,7 @@ namespace DatingApp.API.Dtos
         public int Age { get; set; }
         public DateTime Created { get; set; }
         public DateTime LastActive { get; set; }
-        public ICollection<Photo> Photos { get; set; }
+        public IEnumerable<PhotosForDetailedDto> Photos { get; set; }
 
     }
 }
